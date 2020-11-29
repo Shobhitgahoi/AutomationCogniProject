@@ -13,6 +13,7 @@ import org.apache.log4j.xml.DOMConfigurator;
 * @author Shobhit Gahoi
 *
 */
+
 public class LoggerAgent {
 static Logger logger = null;
 	

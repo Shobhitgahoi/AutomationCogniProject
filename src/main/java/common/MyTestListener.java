@@ -11,6 +11,7 @@ public class MyTestListener implements ITestListener{
 		LoggerAgent.LogInfo("The test case is starting..." +result.getName());
 	}
 
+	
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
 		LoggerAgent.LogInfo(result.getMethod().getMethodName());

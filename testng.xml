@@ -3,7 +3,6 @@
 <suite name="Suite" parallel="none">
   <test name="Test">
     <classes>
-      <class name="com.amazon.BaseTest"/>
       <class name="com.amazon.runner.LaunchAppRunner"/>
     </classes>
   </test> <!-- Test -->

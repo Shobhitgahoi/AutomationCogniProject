@@ -12,6 +12,7 @@ import com.relevantcodes.extentreports.ExtentReports;
  * @author Shobhit Gahoi
  *
  */
+
 public class ReportFactory {
 	
 	static ExtentReports reporter = null;

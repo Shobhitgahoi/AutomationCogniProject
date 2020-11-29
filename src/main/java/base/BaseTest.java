@@ -30,7 +30,7 @@ public class BaseTest {
 	public static ExtentTest testReporter = null;
 	String filePath=PropertyExecutor.getProperty("FILE_PATH")+PropertyExecutor.getProperty("FILE_NAME");
 	String sheetName=PropertyExecutor.getProperty("SHEET_NAME");
-	
+	 
 	/**
 	 * @author Shobhit Gahoi
 	 *
