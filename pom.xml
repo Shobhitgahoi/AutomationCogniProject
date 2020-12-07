@@ -5,7 +5,6 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>Automation Project</name>
   <description>Automation Cognizant Project for Amazon App</description>
-  
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
@@ -97,12 +96,7 @@
 			<artifactId>testng</artifactId>
 			<version>6.9.10</version>
 		</dependency>
-		<dependency>
-			<groupId>net.sourceforge.jexcelapi</groupId>
-			<artifactId>jxl</artifactId>
-			<version>2.6</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
  <dependency>
     <groupId>org.apache.poi</groupId>
@@ -147,14 +141,6 @@
     <version>3.13</version>
 </dependency>
 
-	
-
-<!-- <dependency>
-			<groupId>pro.truongsinh</groupId>
-			<artifactId>appium-flutter-finder</artifactId>
-			<version>0.0.22</version>
-    </dependency> -->
-<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server-standalone -->
 <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server-standalone -->
 </dependencies>
 </project>

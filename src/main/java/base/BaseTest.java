@@ -48,7 +48,12 @@ public class BaseTest {
 		capabilities.setCapability("platformVersion",PropertyExecutor.getProperty("platformVersion"));
 		capabilities.setCapability("deviceName", PropertyExecutor.getProperty("deviceName"));
 		capabilities.setCapability("automationName", PropertyExecutor.getProperty("automationName"));
-		capabilities.setCapability("app", projectpath+PropertyExecutor.getProperty("app"));
+		capabilities.setCapability("noReset", true);
+		 capabilities.setCapability("fullReset", false);
+		 capabilities.setCapability("autoGrantPermissions", true);	
+		 capabilities.setCapability("appPackage", "com.amazon.mShop.android.shopping");
+		 capabilities.setCapability("appActivity","com.amazon.mShop.home.HomeActivity");
+		//capabilities.setCapability("app", projectpath+PropertyExecutor.getProperty("app"));
 		URL url=new URL((String) PropertyExecutor.getProperty("URL"));
 		driver=new AppiumDriver<MobileElement>(url,capabilities);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);

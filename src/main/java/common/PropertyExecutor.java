@@ -25,7 +25,7 @@ public class PropertyExecutor {
 			//LoggerAgent.LogInfo("Reading property value from config propertes file of " + arg);
 			
 			Properties prop = new Properties();
-			File file=new File(System.getProperty("user.dir")+"/src/main/resources/config.properties");
+			File file=new File(System.getProperty("user.dir")+"/src/main/resources/TestSetup.properties");
 			InputStream input =new FileInputStream(file) ;
 					//PropertyExecutor.class.getClassLoader().getResourceAsStream("");
 			if(input==null){

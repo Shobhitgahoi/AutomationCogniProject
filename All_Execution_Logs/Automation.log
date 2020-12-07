@@ -1,0 +1,6 @@
+2020-12-07 23:24:20 INFO  LoggerAgent:31 - The test case is starting...Test
+2020-12-07 23:24:48 INFO  LoggerAgent:31 - The Report Path is: //src//test//outputfile//Test Reports.html
+2020-12-07 23:24:48 INFO  LoggerAgent:31 - The test case is starting...validateAmazonProductAdded
+2020-12-07 23:25:31 INFO  LoggerAgent:31 - Test
+2020-12-07 23:25:31 INFO  LoggerAgent:31 - 07/Dec/2020 23:25:31
+2020-12-07 23:25:46 INFO  LoggerAgent:31 - The test case is finishing...Test

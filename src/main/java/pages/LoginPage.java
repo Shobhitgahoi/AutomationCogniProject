@@ -17,7 +17,7 @@ public class LoginPage extends BasePage<LoginPage> {
 	@AndroidFindBy(xpath="//*[@text='Amazon password']")
 	private MobileElement PASSWORD_FIELD;
 	
-	@AndroidFindBy(xpath="//*[@text='Continue']")
+	@AndroidFindBy(xpath="//*[@resource-id='continue']")
 	private MobileElement CONTINUE_BTN;
 	
 	@AndroidFindBy(className="android.widget.Button")
