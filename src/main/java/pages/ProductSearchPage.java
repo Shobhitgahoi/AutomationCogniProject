@@ -97,7 +97,7 @@ public class ProductSearchPage extends BasePage<ProductSearchPage> {
 	 */
 	public ProductSearchPage validateProductScreenValuesVsCheckout()throws Exception {
 		String productname=getTextAfterFindingElement(PRODUCT_NAME);
-		System.out.println(productname);
+		
 		waitForElementToBeDisplayed(ADD_TO_CART_BTN);
 		clickAfterFindingElement(ADD_TO_CART_BTN);
 		waitForElementToBeDisplayed(PROCEED_TO_CHECKOUT);

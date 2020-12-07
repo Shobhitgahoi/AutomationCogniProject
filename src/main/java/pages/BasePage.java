@@ -43,7 +43,7 @@ public class BasePage<T extends BasePage<T>> {
 		for(int i=0;i<5;i++) {
 			try {
 				//This method is used to  click on the MobileElement when found
-				fastClick(mobileElement,5);
+				fastClick(mobileElement);
 				break;
 			}catch(Exception e) {
 				scrollDown(3);
@@ -58,10 +58,10 @@ public class BasePage<T extends BasePage<T>> {
 		for(int i=0;i<5;i++) {
 			try {
 				//Fetching a text of an element
-			element=getElementText(mobileElement,5);
+			element=getElementText(mobileElement);
 			}catch(Exception e) {
 				scrollDown(3);
-				element=getElementText(mobileElement,5);
+				element=getElementText(mobileElement);
 			}
 		}
 		return element;
@@ -79,12 +79,12 @@ public class BasePage<T extends BasePage<T>> {
 	 */
 	public void waitForElementToBeDisplayed(MobileElement mobileElement) throws Exception {
 		
-		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Thread.sleep(10000);
+		
+		
 		mobileElement.isDisplayed();
 	}
 	
-	private String getElementText(MobileElement mobileElement,int timeOutInSeconds) {
+	private String getElementText(MobileElement mobileElement) {
 		return mobileElement.getText();
 	}
 	
@@ -94,7 +94,7 @@ public class BasePage<T extends BasePage<T>> {
 	}
 	
 	// Clicking on a particular element
-	private void fastClick(MobileElement mobileElement,int timeOutInSeconds) {
+	private void fastClick(MobileElement mobileElement) {
 		mobileElement.click();
 	}
 	

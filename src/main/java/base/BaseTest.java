@@ -7,6 +7,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
@@ -49,6 +51,7 @@ public class BaseTest {
 		capabilities.setCapability("app", projectpath+PropertyExecutor.getProperty("app"));
 		URL url=new URL((String) PropertyExecutor.getProperty("URL"));
 		driver=new AppiumDriver<MobileElement>(url,capabilities);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		reporter = ReportFactory.getReporter("Test Reports");
 	}
 	
