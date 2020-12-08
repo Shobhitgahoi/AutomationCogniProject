@@ -13,14 +13,17 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import common.*;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
 import pages.ExcelDataReader;
 
 @Listeners(common.MyTestListener.class)
@@ -30,6 +33,7 @@ public class BaseTest {
 	public static String screenShotPath=System.getProperty("user.dir")+PropertyExecutor.getProperty("ScreenShot_Path");
 	public static ExtentReports reporter = null;
 	public static ExtentTest testReporter = null;
+	public AppiumDriverLocalService service;
 	String filePath=PropertyExecutor.getProperty("FILE_PATH")+PropertyExecutor.getProperty("FILE_NAME");
 	String sheetName=PropertyExecutor.getProperty("SHEET_NAME");
 	 
@@ -75,6 +79,21 @@ public class BaseTest {
 		testReporter=reporter.startTest(m.getName());
 	}
 	
+	@BeforeSuite
+	public void setUpAppiumServer() {
+		
+		service=AppiumDriverLocalService.buildDefaultService();
+		service.start();
+	}
+
+
+	@AfterSuite
+	public void afterSuite() {
+		//ReportFactory.closeReporter();
+		reporter.endTest(testReporter);
+		reporter.close();
+		service.stop();
+	}
 	
 	
 
