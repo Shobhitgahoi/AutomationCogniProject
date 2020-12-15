@@ -33,7 +33,7 @@ public class BaseTest {
 	public static String screenShotPath=System.getProperty("user.dir")+PropertyExecutor.getProperty("ScreenShot_Path");
 	public static ExtentReports reporter = null;
 	public static ExtentTest testReporter = null;
-	public AppiumDriverLocalService service;
+	//public AppiumDriverLocalService service;
 	String filePath=PropertyExecutor.getProperty("FILE_PATH")+PropertyExecutor.getProperty("FILE_NAME");
 	String sheetName=PropertyExecutor.getProperty("SHEET_NAME");
 	 
@@ -82,8 +82,8 @@ public class BaseTest {
 	@BeforeSuite
 	public void setUpAppiumServer() {
 		
-		service=AppiumDriverLocalService.buildDefaultService();
-		service.start();
+		/*service=AppiumDriverLocalService.buildDefaultService();
+		service.start();*/
 	}
 
 
@@ -92,7 +92,7 @@ public class BaseTest {
 		//ReportFactory.closeReporter();
 		reporter.endTest(testReporter);
 		reporter.close();
-		service.stop();
+		//service.stop();
 	}
 	
 	

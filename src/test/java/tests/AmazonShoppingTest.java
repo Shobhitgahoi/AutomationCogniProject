@@ -17,6 +17,9 @@ public class AmazonShoppingTest extends BaseTest{
 	*/
 	@Test(priority=1,enabled=true)
 	public void validateAmazonProductAdded() throws Exception {
+		
+		testReporter.log(LogStatus.PASS, "Application Launched Successfully...",  testReporter.addScreenCapture(Utility.captureScreenshot(driver, screenShotPath)));
+
 		new LoginPage(driver)
 		.selectSigninButton()
 		.setEmailAddress()

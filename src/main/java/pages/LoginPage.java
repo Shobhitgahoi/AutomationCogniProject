@@ -1,8 +1,11 @@
 package pages;
 
+import com.relevantcodes.extentreports.LogStatus;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import utilities.Utility;
 
 public class LoginPage extends BasePage<LoginPage> {
 	
@@ -38,6 +41,14 @@ public class LoginPage extends BasePage<LoginPage> {
 	 */
 	public LoginPage selectSigninButton() {
 		clickAfterFindingElement(ALLOW_SIGNIN);
+		try {
+			testReporter.log(LogStatus.PASS, "Clicking Sign in Button...",  testReporter.addScreenCapture(Utility.captureScreenshot(driver, screenShotPath)));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
 		return this;
 	}
 	
@@ -54,6 +65,13 @@ public class LoginPage extends BasePage<LoginPage> {
 		clickAfterFindingElement(EMAIL_ADDRESS);
 		String emailaddress=excelreader.readingData("sheet1",1, 0);
 		setvalues(EMAIL_ADDRESS, emailaddress);
+		try {
+			testReporter.log(LogStatus.PASS, "Entering Email Id Button...",  testReporter.addScreenCapture(Utility.captureScreenshot(driver, screenShotPath)));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		return this;
 	}
 	
@@ -66,6 +84,13 @@ public class LoginPage extends BasePage<LoginPage> {
 	 */
 	public LoginPage selectContinue() {
 		clickAfterFindingElement(CONTINUE_BTN);
+		
+		try {
+			testReporter.log(LogStatus.PASS, "Clicking Continue Button...",  testReporter.addScreenCapture(Utility.captureScreenshot(driver, screenShotPath)));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return this;
 	}
 	
@@ -81,6 +106,14 @@ public class LoginPage extends BasePage<LoginPage> {
 		waitForElementToBeDisplayed(PASSWORD_FIELD);
 		String password=excelreader.readingData("sheet1",1, 1);
 		setvalues(PASSWORD_FIELD, password);
+		
+		try {
+			testReporter.log(LogStatus.PASS, "Entering Password Button...",  testReporter.addScreenCapture(Utility.captureScreenshot(driver, screenShotPath)));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		return this;
 	}
 	

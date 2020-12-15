@@ -2,9 +2,12 @@ package pages;
 
 import org.testng.Assert;
 
+import com.relevantcodes.extentreports.LogStatus;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import utilities.Utility;
 
 public class ProductSearchPage extends BasePage<ProductSearchPage> {
 	ExcelDataReader excelreader=new ExcelDataReader();
@@ -18,7 +21,7 @@ public class ProductSearchPage extends BasePage<ProductSearchPage> {
 	@AndroidFindBy(xpath="//*[contains(@text,'Sony')]")
 	private MobileElement SELECT_SEARCHED_PRODUCT;
 	
-	@AndroidFindBy(xpath="//android.view.View[contains(@text,'Sony')]")
+	@AndroidFindBy(xpath="//android.widget.TextView[contains(@text,'Sony')]")
 	private MobileElement PRODUCT_NAME;
 	
 	@AndroidFindBy(id="ourPrice_availability")
@@ -68,6 +71,13 @@ public class ProductSearchPage extends BasePage<ProductSearchPage> {
 	 */
 	public ProductSearchPage selectProduct() {
 		clickAfterFindingElement(SELECT_PRODUCT);
+		
+		try {
+			testReporter.log(LogStatus.PASS, "Selecting the product...",  testReporter.addScreenCapture(Utility.captureScreenshot(driver, screenShotPath)));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return this;
 	}
 	
@@ -83,6 +93,13 @@ public class ProductSearchPage extends BasePage<ProductSearchPage> {
 	public ProductSearchPage selectSearchedProduct() throws Exception {
 		waitForElementToBeDisplayed(SELECT_SEARCHED_PRODUCT);
 		clickAfterFindingElement(SELECT_SEARCHED_PRODUCT);
+		try {
+			testReporter.log(LogStatus.PASS, "Product Verification...",  testReporter.addScreenCapture(Utility.captureScreenshot(driver, screenShotPath)));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		return this;
 	}
 	

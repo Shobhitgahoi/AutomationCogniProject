@@ -2,6 +2,9 @@ package pages;
 
 import java.util.concurrent.TimeUnit;
 import org.testng.*;
+
+import base.BaseTest;
+
 import org.openqa.selenium.ScreenOrientation;
 import org.openqa.selenium.support.PageFactory;
 import io.appium.java_client.AppiumDriver;
@@ -20,8 +23,8 @@ import io.appium.java_client.touch.offset.PointOption;
  *
  * 09-Oct-2020
  */
-public class BasePage<T extends BasePage<T>> {
-	private AppiumDriver driver;
+public class BasePage<T extends BasePage<T>> extends BaseTest {
+	public AppiumDriver driver;
 	
 	public BasePage(AppiumDriver driver) {
 		this.driver=driver;
